@@ -1,0 +1,51 @@
+Eixos 3D em RA: Visualizador de Sistema de Coordenadas
+Lucas Emanuel Rodrigues de Matos
+
+========================================================
+CRÉDITOS DOS RECURSOS 3D
+========================================================
+
+Toda a geometria 3D desta aplicação (cilindros, cones e esfera)
+foi construída com as primitivas nativas do A-Frame, sem modelos
+externos. Nenhum arquivo .glb ou .obj foi utilizado.
+
+Bibliotecas utilizadas:
+- A-Frame 1.4.2: https://aframe.io (licença MIT)
+- AR.js 3.4.5: https://ar-js-org.github.io/AR.js-Docs/ (licença MIT)
+
+========================================================
+DECISÃO DE OTIMIZAÇÃO: PRIMITIVAS NO LUGAR DE MODELO 3D
+========================================================
+
+Em vez de procurar um modelo .glb pronto (Sketchfab, por exemplo), os
+eixos e o vetor foram feitos só com primitivas do A-Frame (a-cylinder,
+a-cone, a-sphere). A ideia veio de um exemplo do material do curso, em
+que um modelo 3D complexo é trocado por primitivas a-sphere pra
+deixar a cena mais leve.
+
+Por que isso ajuda:
+- Não precisa baixar nenhum arquivo externo, então a aplicação abre
+  rápido mesmo numa conexão ruim.
+- Cada eixo fica exatamente na cor e proporção que eu defini (X
+  vermelho, Y verde, Z azul), seguindo a convenção de Geometria
+  Analítica. Um modelo pronto do Sketchfab provavelmente não viria
+  assim.
+- Sem textura e com geometria simples, os três pontos de otimização
+  do curso (polígonos, texturas e draw calls) já ficam baixos desde o
+  começo.
+
+========================================================
+COMO USAR
+========================================================
+
+1. Acesse o link público no Netlify pelo celular (HTTPS obrigatório)
+2. Permita o acesso à câmera quando solicitado
+3. Imprima ou exiba o marker Hiro:
+   https://raw.githubusercontent.com/AR-js-org/AR.js/master/data/images/hiro.png
+4. Aponte a câmera para o marker
+
+INTERAÇÕES:
+- Toque rápido na tela → gera o vetor v = (2, 1, 1) com animação
+  (toque novamente para remover)
+- Pressione e segure  → amplia os eixos 1,5× para inspecionar
+  (solte para voltar ao tamanho normal)
